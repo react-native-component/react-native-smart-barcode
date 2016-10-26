@@ -1,0 +1,25 @@
+{
+  "name": "react-native-smart-barcode",
+  "version": "1.0.0",
+  "description": "A smart barcode scanner component for React Native app",
+  "main": "Barcode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-component/react-native-smart-barcode.git"
+  },
+  "keywords": [
+    "react-native",
+    "smart",
+    "barcode",
+    "scan"
+  ],
+  "author": "HISAME SHIZUMARU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-native-component/react-native-smart-barcode/issues"
+  },
+  "homepage": "https://github.com/react-native-component/react-native-smart-barcode#readme"
+}

@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F0396621DB5F98F00393F03 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0396611DB5F98F00393F03 /* UIColor+Hex.m */; };
+		9F924BA81DAE17A5002340CC /* RectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F924BA71DAE17A5002340CC /* RectView.m */; };
+		9FCCD75D1DAC8DA800025BFD /* RCTBarcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD75C1DAC8DA800025BFD /* RCTBarcode.m */; };
+		9FCCD75E1DAC8DA800025BFD /* RCTBarcode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FCCD75B1DAC8DA800025BFD /* RCTBarcode.h */; };
+		9FCCD7931DACC77A00025BFD /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD7921DACC77A00025BFD /* LineView.m */; };
+		9FCCD7C01DACCCD500025BFD /* RCTBarcodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD7BF1DACCCD500025BFD /* RCTBarcodeManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FCCD7561DAC8DA800025BFD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				9FCCD75E1DAC8DA800025BFD /* RCTBarcode.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9F0396601DB5F98F00393F03 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		9F0396611DB5F98F00393F03 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		9F924BA61DAE17A5002340CC /* RectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectView.h; sourceTree = "<group>"; };
+		9F924BA71DAE17A5002340CC /* RectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectView.m; sourceTree = "<group>"; };
+		9FCCD7581DAC8DA800025BFD /* libRCTBarcode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTBarcode.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FCCD75B1DAC8DA800025BFD /* RCTBarcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTBarcode.h; sourceTree = "<group>"; };
+		9FCCD75C1DAC8DA800025BFD /* RCTBarcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTBarcode.m; sourceTree = "<group>"; };
+		9FCCD7911DACC77A00025BFD /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
+		9FCCD7921DACC77A00025BFD /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
+		9FCCD7BE1DACCCD500025BFD /* RCTBarcodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBarcodeManager.h; sourceTree = "<group>"; };
+		9FCCD7BF1DACCCD500025BFD /* RCTBarcodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTBarcodeManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FCCD7551DAC8DA800025BFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FCCD74F1DAC8DA800025BFD = {
+			isa = PBXGroup;
+			children = (
+				9FCCD75A1DAC8DA800025BFD /* RCTBarCode */,
+				9FCCD7591DAC8DA800025BFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FCCD7591DAC8DA800025BFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FCCD7581DAC8DA800025BFD /* libRCTBarcode.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FCCD75A1DAC8DA800025BFD /* RCTBarCode */ = {
+			isa = PBXGroup;
+			children = (
+				9FCCD7911DACC77A00025BFD /* LineView.h */,
+				9FCCD7921DACC77A00025BFD /* LineView.m */,
+				9FCCD75B1DAC8DA800025BFD /* RCTBarcode.h */,
+				9FCCD75C1DAC8DA800025BFD /* RCTBarcode.m */,
+				9FCCD7BE1DACCCD500025BFD /* RCTBarcodeManager.h */,
+				9FCCD7BF1DACCCD500025BFD /* RCTBarcodeManager.m */,
+				9F924BA61DAE17A5002340CC /* RectView.h */,
+				9F924BA71DAE17A5002340CC /* RectView.m */,
+				9F0396601DB5F98F00393F03 /* UIColor+Hex.h */,
+				9F0396611DB5F98F00393F03 /* UIColor+Hex.m */,
+			);
+			name = RCTBarCode;
+			path = RCTBarcode;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FCCD7571DAC8DA800025BFD /* RCTBarcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FCCD7611DAC8DA800025BFD /* Build configuration list for PBXNativeTarget "RCTBarcode" */;
+			buildPhases = (
+				9FCCD7541DAC8DA800025BFD /* Sources */,
+				9FCCD7551DAC8DA800025BFD /* Frameworks */,
+				9FCCD7561DAC8DA800025BFD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCTBarcode;
+			productName = RCTBarcode;
+			productReference = 9FCCD7581DAC8DA800025BFD /* libRCTBarcode.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FCCD7501DAC8DA800025BFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "react-native-component";
+				TargetAttributes = {
+					9FCCD7571DAC8DA800025BFD = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9FCCD7531DAC8DA800025BFD /* Build configuration list for PBXProject "RCTBarCode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9FCCD74F1DAC8DA800025BFD;
+			productRefGroup = 9FCCD7591DAC8DA800025BFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FCCD7571DAC8DA800025BFD /* RCTBarcode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FCCD7541DAC8DA800025BFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FCCD75D1DAC8DA800025BFD /* RCTBarcode.m in Sources */,
+				9F0396621DB5F98F00393F03 /* UIColor+Hex.m in Sources */,
+				9FCCD7C01DACCCD500025BFD /* RCTBarcodeManager.m in Sources */,
+				9F924BA81DAE17A5002340CC /* RectView.m in Sources */,
+				9FCCD7931DACC77A00025BFD /* LineView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9FCCD75F1DAC8DA800025BFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9FCCD7601DAC8DA800025BFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FCCD7621DAC8DA800025BFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9FCCD7631DAC8DA800025BFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FCCD7531DAC8DA800025BFD /* Build configuration list for PBXProject "RCTBarCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FCCD75F1DAC8DA800025BFD /* Debug */,
+				9FCCD7601DAC8DA800025BFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FCCD7611DAC8DA800025BFD /* Build configuration list for PBXNativeTarget "RCTBarcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FCCD7621DAC8DA800025BFD /* Debug */,
+				9FCCD7631DAC8DA800025BFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FCCD7501DAC8DA800025BFD /* Project object */;
+}
