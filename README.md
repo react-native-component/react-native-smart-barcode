@@ -6,7 +6,7 @@
 [![npm](https://img.shields.io/npm/l/react-native-smart-barcode.svg)](https://github.com/react-native-component/react-native-smart-barcode/blob/master/LICENSE)
 
 A smart barcode scanner component for React Native app.
-The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for android.
+The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for android, and also supports ios.
 
 ## Preview
 
