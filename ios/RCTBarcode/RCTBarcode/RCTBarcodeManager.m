@@ -61,6 +61,9 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
 }
 
 - (void)initializeCaptureSessionInput:(NSString *)type {
+    
+    NSLog(@"initializeCaptureSessionInput...");
+    
     dispatch_async(self.sessionQueue, ^{
     
         [self.session beginConfiguration];
@@ -84,6 +87,9 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
 
         
         if ([self.session canAddInput:captureDeviceInput]) {
+            
+            NSLog(@"self.session canAddInput:captureDeviceInput...");
+            
             [self.session addInput:captureDeviceInput];
             
             self.videoCaptureDeviceInput = captureDeviceInput;
@@ -107,6 +113,9 @@ RCT_EXPORT_METHOD(startSession) {
 //        NSLog(@"self.metadataOutput = %@", self.metadataOutput);
         
         if(self.metadataOutput == nil) {
+            
+            NSLog(@"self.metadataOutput = %@", self.metadataOutput);
+            
             AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
             self.metadataOutput = metadataOutput;
         
@@ -171,6 +180,7 @@ RCT_EXPORT_METHOD(stopSession) {
         [self.session commitConfiguration];
         [self.session stopRunning];
         [self.barcode.scanLineTimer invalidate];
+        self.barcode.scanLineTimer = nil;
         for(AVCaptureInput *input in self.session.inputs) {
             [self.session removeInput:input];
         }
@@ -178,6 +188,7 @@ RCT_EXPORT_METHOD(stopSession) {
         for(AVCaptureOutput *output in self.session.outputs) {
             [self.session removeOutput:output];
         }
+        self.metadataOutput = nil;
     });
 }
 

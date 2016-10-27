@@ -52,9 +52,6 @@
 {
 //    NSLog(@"removeFromSuperview...");
     
-    [self.scanLineTimer invalidate];
-    self.scanLineTimer = nil;
-    
     [self.manager endSession];
     [super removeFromSuperview];
 }
