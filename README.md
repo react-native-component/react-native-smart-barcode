@@ -11,7 +11,6 @@ The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for 
 ## Preview
 
 ![react-native-smart-barcode-preview-ios][2]
-![react-native-smart-barcode-preview-android][3]
 
 ## Installation
 
