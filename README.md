@@ -30,6 +30,8 @@ npm install react-native-smart-barcode --save
 
 * Dray raw folder to your project
 
+* Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
+
 ## Installation (Android)
 
 * In `android/settings.gradle`
@@ -51,7 +53,7 @@ dependencies {
 }
 ```
 
-* in MainApplication.java
+* In MainApplication.java
 
 ```
 ...
@@ -81,7 +83,7 @@ private ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 ...
 ```
 
-* in MainActivity.java
+* In MainActivity.java
 ```
 ...
 import com.reactnativecomponent.barcode.RCTCapturePackage;    //import RCTCapturePackage
@@ -107,6 +109,17 @@ protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
 }
+```
+
+* In AndroidManifest.xml, add camera permissions
+```
+...
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-permission android:name="android.permission.VIBRATE"/>
+
+<uses-feature android:name="android.hardware.camera"/>
+<uses-feature android:name="android.hardware.camera.autofocus"/>
+...
 ```
 
 
