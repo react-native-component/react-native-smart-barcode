@@ -18,7 +18,7 @@ import {
     Platform,
 } from 'react-native'
 
-const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule;
+const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule
 
 
 export default class Barcode extends Component {
