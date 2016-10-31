@@ -1,3 +1,10 @@
+/*
+ * A smart barcode scanner for react-native apps
+ * https://github.com/react-native-component/react-native-smart-barcode/
+ * Released under the MIT license
+ * Copyright (c) 2016 react-native-component <moonsunfall@aliyun.com>
+ */
+
 
 import React, {
     PropTypes,
