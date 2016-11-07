@@ -26,8 +26,6 @@ npm install react-native-smart-barcode --save
 
 * Look for Header Search Paths and make sure it contains $(SRCROOT)/../../../react-native/React as recursive.
 
-* In your project, Look for Header Search Paths and make sure it contains $(SRCROOT)/../node_modules/react-native-smart-barcode/ios/RCTBarCode/RCTBarCode
-
 * Dray raw folder to your project
 
 * Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
