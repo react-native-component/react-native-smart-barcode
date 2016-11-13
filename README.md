@@ -127,7 +127,7 @@ see [ReactNativeComponentDemos][0]
 
 ## Usage
 
-Install the button from npm with `npm install react-native-smart-barcode --save`.
+Install the package from npm with `npm install react-native-smart-barcode --save`.
 Then, require it from your app's JavaScript files with `import Barcode from 'react-native-smart-barcode'`.
 
 ```js
