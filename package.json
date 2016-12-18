@@ -1,6 +1,6 @@
 {
   "name": "react-native-smart-barcode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A smart barcode scanner component for React Native app",
   "main": "Barcode.js",
   "scripts": {
