@@ -24,7 +24,7 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
-import android.view.SurfaceHolder;
+import android.graphics.SurfaceTexture;
 
 import java.io.IOException;
 
@@ -133,16 +133,16 @@ private final Context context;
   /**
    * Opens the camera driver and initializes the hardware parameters.
    *
-   * @param holder The surface object which the camera will draw preview frames into.
+   * @param surfaceTexture The surface object which the camera will draw preview frames into.
    * @throws IOException Indicates the camera driver failed to open.
    */
-  public void openDriver(SurfaceHolder holder) throws IOException {
+  public void openDriver(SurfaceTexture surfaceTexture) throws IOException {
     if (camera == null) {
       camera = Camera.open();
       if (camera == null) {
         throw new IOException();
       }
-      camera.setPreviewDisplay(holder);
+      camera.setPreviewTexture(surfaceTexture);
 
       if (!initialized) {
         initialized = true;

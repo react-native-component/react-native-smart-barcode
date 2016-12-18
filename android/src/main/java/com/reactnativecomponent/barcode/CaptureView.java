@@ -10,6 +10,7 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -18,8 +19,7 @@ import android.os.Vibrator;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Vector;
 
 
-public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
+public class CaptureView extends FrameLayout implements TextureView.SurfaceTextureListener {
 
 
     private CaptureActivityHandler handler;
@@ -54,7 +54,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
     private Activity activity;
     private ViewGroup.LayoutParams param;
     private int ScreenWidth, ScreenHeight;
-    private SurfaceView surfaceView;
+    private TextureView textureView;
     private long beginTime;
     private int height;
     private int width;
@@ -95,7 +95,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
     private View popupWindowContent;
     private PopupWindow popupWindow;
     private LinearGradientView linearGradientView;
-    SurfaceHolder holder;
+    SurfaceTexture surfaceTexture;
     boolean autoStart = true;//是否自动启动扫描
     String ResultStr="";
 
@@ -175,23 +175,6 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
         return handler;
     }
 
-    @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width,
-                               int height) {
-    }
-
-    @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-
-//        Log.i("Test", "height:" + height + "width:" + width);
-        initCameraManager();
-        this.holder = holder;
-
-        if (autoStart) {
-            startScan();
-        }
-
-    }
 
     private void initCameraManager() {
 
@@ -215,15 +198,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
             this.addView(this.viewfinderView);
         }
     }*/
-
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-
-        stopScan();
-
-    }
-
+    
     /**
      * Activity onResume后调用view的onAttachedToWindow
      */
@@ -231,8 +206,6 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
     protected void onAttachedToWindow() {
         init();
         super.onAttachedToWindow();
-
-
     }
 
     /**
@@ -242,18 +215,18 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
         if (mHandler == null) {
             mHandler = new Handler();
         }
-        surfaceView = new SurfaceView(activity);
-        surfaceView.setLayoutParams(param);
-        surfaceView.getLayoutParams().height = ScreenHeight;
-        surfaceView.getLayoutParams().width = ScreenWidth;
-        SurfaceHolder surfaceHolder = surfaceView.getHolder();
+        textureView = new TextureView(activity);
+        textureView.setLayoutParams(param);
+        textureView.getLayoutParams().height = ScreenHeight;
+        textureView.getLayoutParams().width = ScreenWidth;
+        SurfaceTexture surfaceTexture = textureView.getSurfaceTexture();
         if (hasSurface) {
-            initCamera(surfaceHolder);
+            initCamera(surfaceTexture);
         } else {
-            surfaceHolder.addCallback(this);
+            textureView.setSurfaceTextureListener(this);
 
         }
-        this.addView(surfaceView);
+        this.addView(textureView);
         viewfinderView = new ViewfinderView(activity, scanTime, CORNER_COLOR);
         viewfinderView.CORNER_WIDTH = CORNER_WIDTH;
         viewfinderView.ShowText = Text;
@@ -388,7 +361,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
             viewfinderView.drawLine = true;
             hasSurface = true;
             CameraManager.get().framingRectInPreview = null;
-            initCamera(holder);
+            initCamera(surfaceTexture);
 
             CameraManager.get().initPreviewCallback();
             CameraManager.get().startPreview();
@@ -427,10 +400,8 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
     @Override
     protected void onDetachedFromWindow() {
         this.removeView(viewfinderView);
-        this.removeView(surfaceView);
-//        if(popupWindow.isShowing()){
-//            popupWindow.dismiss();
-//        }
+        this.removeView(textureView);
+
         if (handler != null) {
             handler.quitSynchronously();
         }
@@ -439,9 +410,9 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
     }
 
 
-    private void initCamera(SurfaceHolder surfaceHolder) {
+    private void initCamera(SurfaceTexture surfaceTexture) {
         try {
-            CameraManager.get().openDriver(surfaceHolder);
+            CameraManager.get().openDriver(surfaceTexture);
 
 
         } catch (IOException ioe) {
@@ -483,44 +454,12 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        initCamera(surfaceView.getHolder());
+        initCamera(textureView.getHolder());
         if (handler != null) {
             handler.restartPreviewAndDecode();
         }*/
 
     }
-  /*  public Handler Scanhandler=new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            // TODO Auto-generated method stub
-            super.handleMessage(msg);
-            // 此处可以更新UI
-            Bundle b = msg.getData();
-            String result = b.getString("result");
-            onEvChangeListener.getQRCodeResult(result); //观察者模式发送到RN侧
-        }
-    };//不加这个分号则不能自动添加代码
-*/
-   /* public void DecodeFromPath(final String path){
-
-
-        Runnable scan_thread =new Runnable() {
-            @Override
-            public void run() {
-               String ResultStr= DecodeUtil.getStringFromQRCode(path);
-                Message msg = new Message();
-                Bundle b = new Bundle();// 存放数据
-                b.putString("result",ResultStr);
-                msg.setData(b);
-
-                Scanhandler.sendMessage(msg);
-            }
-        };
-
-        Scanhandler.post(scan_thread);
-
-
-    }*/
 
 
     /**
@@ -687,7 +626,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
 
         if (hasWindowFocus) {
             //对应onresume
-            this.holder = surfaceView.getHolder();
+            this.surfaceTexture = textureView.getSurfaceTexture();
             startScan();
         } else {
             //对应onpause
@@ -844,7 +783,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
                     CameraManager.get().framingRectInPreview = null;
 //                    decodeFormats = null;
                     viewfinderView.drawLine = true;
-                    holder = surfaceView.getHolder();
+                    surfaceTexture = textureView.getSurfaceTexture();
 //                    startScan();
                       startQR();
                     initProgressBar();
@@ -855,7 +794,7 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
                     stopScan();
                     CameraManager.get().framingRectInPreview = null;
 //                    decodeFormats = null;
-                    holder = surfaceView.getHolder();
+                    surfaceTexture = textureView.getSurfaceTexture();
                     startScan();
                     viewfinderView.drawLine = true;
                 }
@@ -870,6 +809,41 @@ public class CaptureView extends FrameLayout implements SurfaceHolder.Callback {
 
 
         }
+
+    }
+
+    @Override
+    public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+//        Log.i("Test", "height:" + height + "width:" + width);
+
+        CameraManager.init(activity);
+
+        initCameraManager();
+
+        surfaceTexture = surface;
+
+
+        textureView.setAlpha(1.0f);
+
+
+        if (autoStart) {
+            startScan();
+        }
+    }
+
+    @Override
+    public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+
+    }
+
+    @Override
+    public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+        stopScan();
+        return false;
+    }
+
+    @Override
+    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
 
     }
 
