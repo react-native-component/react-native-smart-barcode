@@ -41,6 +41,7 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
     
     if(!self.barcode){
         self.barcode = [[RCTBarcode alloc] initWithManager:self];
+        [self.barcode setClipsToBounds:YES];
     }
     
     SystemSoundID beep_sound_id;
@@ -62,7 +63,7 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
 
 - (void)initializeCaptureSessionInput:(NSString *)type {
     
-    NSLog(@"initializeCaptureSessionInput...");
+//    NSLog(@"initializeCaptureSessionInput...");
     
     dispatch_async(self.sessionQueue, ^{
     
@@ -88,7 +89,7 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
         
         if ([self.session canAddInput:captureDeviceInput]) {
             
-            NSLog(@"self.session canAddInput:captureDeviceInput...");
+//            NSLog(@"self.session canAddInput:captureDeviceInput...");
             
             [self.session addInput:captureDeviceInput];
             
@@ -114,7 +115,7 @@ RCT_EXPORT_METHOD(startSession) {
         
         if(self.metadataOutput == nil) {
             
-            NSLog(@"self.metadataOutput = %@", self.metadataOutput);
+//            NSLog(@"self.metadataOutput = %@", self.metadataOutput);
             
             AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
             self.metadataOutput = metadataOutput;
