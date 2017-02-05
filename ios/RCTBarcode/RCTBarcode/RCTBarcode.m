@@ -1,6 +1,6 @@
 
 #import "RCTBarcode.h"
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 #import "LineView.h"
 //#define WIDTH                 [UIScreen mainScreen].bounds.size.width
 //#define HEIGHT                [UIScreen mainScreen].bounds.size.height
