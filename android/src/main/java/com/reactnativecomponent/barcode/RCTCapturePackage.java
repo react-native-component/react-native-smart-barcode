@@ -14,17 +14,20 @@ import java.util.List;
 
 
 public class RCTCapturePackage implements ReactPackage {
-    Activity activity;
+//    Activity activity;
     RCTCaptureModule mModuleInstance;
     RCTCaptureManager captureManager;
 //    RCTLinearGradientViewManager linearGradientViewManager;
 
-   public RCTCapturePackage(Activity activity) {
-            this.activity = activity;
-        captureManager = new RCTCaptureManager(activity);
-//        linearGradientViewManager = new RCTLinearGradientViewManager(activity);
-    }
+//   public RCTCapturePackage(Activity activity) {
+//            this.activity = activity;
+//        captureManager = new RCTCaptureManager(activity);
+////        linearGradientViewManager = new RCTLinearGradientViewManager(activity);
+//    }
 
+    public RCTCapturePackage() {
+        captureManager = new RCTCaptureManager();
+    }
 
 
     @Override
