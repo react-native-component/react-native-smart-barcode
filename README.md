@@ -15,8 +15,13 @@ The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for 
 ## Installation
 
 ```
-npm install react-native-smart-barcode --save
+npm install react-native-smart-barcode@untilRN0.40 --save
 ```
+
+## Notice
+
+It can only be used until react-native 0.4.0 for ios, if you want to use the latest package, use `npm install react-native-smart-barcode --save`
+
 
 ## Installation (iOS)
 
