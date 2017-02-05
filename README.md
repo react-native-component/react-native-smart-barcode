@@ -18,6 +18,11 @@ The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for 
 npm install react-native-smart-barcode --save
 ```
 
+## Notice
+
+It can only be used greater-than-equal react-native 0.4.0 for ios, if you want to use the package less-than react-native 0.4.0, use `npm install react-native-smart-barcode@untilRN0.40 --save`
+
+
 ## Installation (iOS)
 
 * Drag RCTBarCode.xcodeproj to your project on Xcode.
