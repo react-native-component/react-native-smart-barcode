@@ -31,10 +31,10 @@ public class RCTCaptureManager extends ViewGroupManager<CaptureView> {
     private float density;
 
 
-    public RCTCaptureManager(Activity activity) {
-        this.activity = activity;
-        density = activity.getResources().getDisplayMetrics().density;
-    }
+//    public RCTCaptureManager(Activity activity) {
+//        this.activity = activity;
+//        density = activity.getResources().getDisplayMetrics().density;
+//    }
 
     @Override
     public String getName() {
@@ -43,6 +43,8 @@ public class RCTCaptureManager extends ViewGroupManager<CaptureView> {
 
     @Override
     public CaptureView createViewInstance(ThemedReactContext context) {
+        Activity activity = context.getCurrentActivity();
+        density = activity.getResources().getDisplayMetrics().density;
         cap = new CaptureView(activity, context);
 //        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 //
