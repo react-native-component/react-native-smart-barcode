@@ -16,6 +16,7 @@ import {
     NativeModules,
     AppState,
     Platform,
+	ViewPropTypes
 } from 'react-native'
 import PropTypes from 'prop-types'
 
@@ -35,7 +36,7 @@ export default class Barcode extends Component {
     }
 
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         onBarCodeRead: PropTypes.func.isRequired,
         barCodeTypes: PropTypes.array,
         scannerRectWidth: PropTypes.number,
