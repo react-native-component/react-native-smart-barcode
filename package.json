@@ -16,6 +16,9 @@
     "barcode",
     "scan"
   ],
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
   "author": "HISAME SHIZUMARU",
   "license": "MIT",
   "bugs": {

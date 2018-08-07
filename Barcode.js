@@ -5,18 +5,16 @@
  * Copyright (c) 2016 react-native-component <moonsunfall@aliyun.com>
  */
 
-
-import React, {
-    PropTypes,
-    Component,
-} from 'react'
+import React, { Component } from 'react'
 import {
     View,
     requireNativeComponent,
     NativeModules,
     AppState,
     Platform,
+    ViewPropTypes
 } from 'react-native'
+import PropTypes from 'prop-types'
 
 const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule
 
@@ -34,7 +32,7 @@ export default class Barcode extends Component {
     }
 
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         onBarCodeRead: PropTypes.func.isRequired,
         barCodeTypes: PropTypes.array,
         scannerRectWidth: PropTypes.number,
