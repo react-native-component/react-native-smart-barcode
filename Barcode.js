@@ -7,7 +7,6 @@
 
 import React, { Component } from 'react'
 import {
-    View,
     requireNativeComponent,
     NativeModules,
     AppState,
