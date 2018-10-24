@@ -267,6 +267,73 @@ RCT_EXPORT_METHOD(stopSession) {
 
 
 
+RCT_EXPORT_METHOD(startFlash) {
+#if TARGET_IPHONE_SIMULATOR
+    return;
+#endif
+    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        AVCaptureDevice *device = [self.videoCaptureDeviceInput device];
+        
+        NSError *error = nil;
+        
+        if (![device hasFlash]) return;
+        if (![device lockForConfiguration:&error]) {
+            NSLog(@"%@", error);
+            return;
+        }
+        if (device.hasFlash )
+        {
+            NSError *error = nil;
+            if ([device lockForConfiguration:&error])
+            {
+                [device setTorchMode:AVCaptureFlashModeOn];
+                [device unlockForConfiguration];
+            }
+            else
+            {
+                NSLog(@"%@", error);
+            }
+        }
+        [device unlockForConfiguration];
+       
+        
+    });
+}
+
+RCT_EXPORT_METHOD(stopFlash) {
+#if TARGET_IPHONE_SIMULATOR
+    return;
+#endif
+    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        AVCaptureDevice *device = [self.videoCaptureDeviceInput device];
+        
+        NSError *error = nil;
+        
+        if (![device hasFlash]) return;
+        if (![device lockForConfiguration:&error]) {
+            NSLog(@"%@", error);
+            return;
+        }
+        if (device.hasFlash )
+        {
+            NSError *error = nil;
+            if ([device lockForConfiguration:&error])
+            {
+                [device setTorchMode:AVCaptureFlashModeOff];
+                [device unlockForConfiguration];
+            }
+            else
+            {
+                NSLog(@"%@", error);
+            }
+        }
+        [device unlockForConfiguration];
+        
+        
+    });
+}
 
 
 - (NSDictionary *)constantsToExport
