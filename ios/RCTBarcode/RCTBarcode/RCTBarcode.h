@@ -10,7 +10,7 @@
 @property (nonatomic,strong)NSTimer *scanLineTimer;
 @property (nonatomic,strong)LineView *scanLine;
 @property (nonatomic,assign)CGRect scannerRect;
-@property (nonatomic, copy) RCTBubblingEventBlock onBarCodeRead;
+@property (nonatomic, copy) RCTDirectEventBlock onBarCodeRead;
 @property (nonatomic, assign) NSInteger scannerRectWidth;
 @property (nonatomic, assign) NSInteger scannerRectHeight;
 @property (nonatomic, assign) NSInteger scannerRectTop;

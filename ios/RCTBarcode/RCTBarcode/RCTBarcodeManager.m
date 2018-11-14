@@ -24,7 +24,7 @@ RCT_EXPORT_VIEW_PROPERTY(scannerLineInterval, NSInteger)
 
 RCT_EXPORT_VIEW_PROPERTY(scannerRectCornerColor, NSString)
 
-RCT_EXPORT_VIEW_PROPERTY(onBarCodeRead, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onBarCodeRead, RCTDirectEventBlock)
 
 RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
 //    NSLog(@"custom barCodeTypes -> %@", self.barCodeTypes);
