@@ -24,5 +24,8 @@
   "homepage": "https://github.com/react-native-component/react-native-smart-barcode#readme",
   "peerDependencies": {
     "react-native": ">=0.40.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
   }
 }
