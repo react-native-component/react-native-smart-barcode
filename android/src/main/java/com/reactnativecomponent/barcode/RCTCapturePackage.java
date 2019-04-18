@@ -17,6 +17,7 @@ public class RCTCapturePackage implements ReactPackage {
 //    Activity activity;
     RCTCaptureModule mModuleInstance;
     RCTCaptureManager captureManager;
+    private final String TAG = "whb";
 //    RCTLinearGradientViewManager linearGradientViewManager;
 
 //   public RCTCapturePackage(Activity activity) {
