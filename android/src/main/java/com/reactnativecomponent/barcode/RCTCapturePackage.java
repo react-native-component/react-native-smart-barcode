@@ -17,13 +17,8 @@ public class RCTCapturePackage implements ReactPackage {
 //    Activity activity;
     RCTCaptureModule mModuleInstance;
     RCTCaptureManager captureManager;
-//    RCTLinearGradientViewManager linearGradientViewManager;
+    private final String TAG = "whb";
 
-//   public RCTCapturePackage(Activity activity) {
-//            this.activity = activity;
-//        captureManager = new RCTCaptureManager(activity);
-////        linearGradientViewManager = new RCTLinearGradientViewManager(activity);
-//    }
 
     public RCTCapturePackage() {
         captureManager = new RCTCaptureManager();
@@ -36,11 +31,6 @@ public class RCTCapturePackage implements ReactPackage {
         return Arrays.<NativeModule>asList(
                 mModuleInstance
         );
-        }
-
-        @Override
-        public List<Class<? extends JavaScriptModule>> createJSModules() {
-            return Collections.emptyList();
         }
 
         @Override
